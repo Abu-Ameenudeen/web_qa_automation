@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .vscode/
 reports/
-
+.pytest_cache/
 # exe
 drivers/
+
