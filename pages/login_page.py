@@ -1,6 +1,5 @@
-# pages/login_page.py
-
 from selenium.webdriver.common.by import By
+from utils.config import CONFIG
 
 class LoginPage:
     def __init__(self, driver):
@@ -10,7 +9,7 @@ class LoginPage:
         self.login_button = (By.ID, "login-button")
 
     def load(self):
-        self.driver.get("https://www.saucedemo.com")
+        self.driver.get(CONFIG["base_url"])
 
     def login(self, username, password):
         self.driver.find_element(*self.username_input).send_keys(username)

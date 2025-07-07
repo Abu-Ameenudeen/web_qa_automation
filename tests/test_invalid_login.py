@@ -1,10 +1,13 @@
 from pages.login_page import LoginPage
+from utils.config import CONFIG
 import time
 
 def test_invalid_login(driver):
     login_page = LoginPage(driver)
     login_page.load()
-    login_page.login("invalid_user", "wrong_pass")
+
+    creds = CONFIG["invalid_user"]
+    login_page.login(creds["username"], creds["password"])
 
     time.sleep(1)
     error_text = login_page.get_error_message()
